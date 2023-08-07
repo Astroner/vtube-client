@@ -1,0 +1,27 @@
+{
+  "name": "@dogonis/vtube-client",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "author": "Evgeny Nikiforov",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon ./run/run.ts",
+    "build": "tsc --project ./tsconfig.build.json",
+    "clear": "del lib",
+    "prepublishOnly": "npm run clear && npm run build"
+  },
+  "nodemon": {
+    "execMap": {
+      "ts": "ts-node"
+    }
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
+  },
+  "devDependencies": {
+    "del-cli": "^5.0.0",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  }
+}

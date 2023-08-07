@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "alwaysStrict": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "lib": [
+            "DOM",
+            "ES2015"
+        ],
+        "outDir": "lib",
+        "declaration": true
+    },
+    "include": ["src", "run"],
+    "exclude": ["node_modules"]
+}
