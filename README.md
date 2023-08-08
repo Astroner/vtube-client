@@ -33,11 +33,11 @@ export const fetchImagineDragons = () => {
 
 # API
 Basically **VTubeClient** provides a collection of public APIs to fetch data:
- - [**channel**](#channel) - youtube channel info
- - [**artist**](#artist) - music artist info
- - [**video**](#video) - media info i.e. formats, descriptions and e.t.c
- - [**search**](#search) - query data from youtube or music
- - [**user**](#user) - provides methods to create/restore [session](#session) for private API
+ - [channel](#channel) - youtube channel info
+ - [artist](#artist) - music artist info
+ - [video](#video) - media info i.e. formats, descriptions and e.t.c
+ - [search](#search) - query data from youtube or music
+ - [user](#user) - provides methods to create/restore [session](#session) for private API
 
 ## Channel
  - **info** - get channel info
