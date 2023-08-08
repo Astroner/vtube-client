@@ -1,54 +1,36 @@
-import { Axios } from "axios";
+import Axios, { Axios as AxiosT } from "axios";
 
 import { Channel } from "./channel";
-import { Credentials } from "./category.class";
-import { Recommendations } from "./recommendations";
 import { Artist } from "./artist";
 import { Video } from "./video";
-import { Playlist } from "./playlist";
 import { Search } from "./search";
 import { User } from "./user";
+import { YTPlaylist } from "./responses";
 
 export class VTubeClient {
     channel: Channel;
-    recommendations: Recommendations;
     artist: Artist;
     video: Video;
-    playlist: Playlist;
     search: Search;
     user: User;
 
-    private token: string | null;
+    private axios: AxiosT;
 
-    constructor(apiAddr: string, token?: string | null) {
-        this.token = token ?? null;
-
-        const axios = new Axios({
-            baseURL: apiAddr
+    constructor(apiAddr: string) {
+        this.axios = Axios.create({
+            baseURL: apiAddr,
         })
 
-        const credentials: Credentials = {
-            getToken: () => this.token
-        }
-
-        this.channel = new Channel(axios, credentials);
-        this.recommendations = new Recommendations(axios, credentials);
-        this.artist = new Artist(axios, credentials);
-        this.video = new Video(axios, credentials);
-        this.playlist = new Playlist(axios, credentials);
-        this.search = new Search(axios, credentials);
-        this.user = new User(axios, credentials);
+        this.channel = new Channel(this.axios);
+        this.artist = new Artist(this.axios);
+        this.video = new Video(this.axios);
+        this.search = new Search(this.axios);
+        this.user = new User(this.axios);
     }
 
-    hasToken() {
-        return !!this.token;
-    }
-
-    setToken(token: string) {
-        this.token = token;
-    }
-
-    resetToken() {
-        this.token = null;
+    async getPlaylist(list: string) {
+        const { data } = await this.axios.get<YTPlaylist>(`/playlist/${list}/`);
+      
+        return data;
     }
 }

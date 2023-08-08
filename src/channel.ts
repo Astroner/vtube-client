@@ -1,8 +1,8 @@
 import { Page, YoutubeChannel, YTVideo } from "./responses";
-import { Category } from "./category.class";
+import { API } from "./api.class";
 
 
-export class Channel extends Category {
+export class Channel extends API {
     async info(id: string) {
         const { data } = await this.axios.get<YoutubeChannel>(`/channel/youtube/${id}/`);
     

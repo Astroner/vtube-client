@@ -1,14 +1,11 @@
 import { MusicCategories } from "./responses";
-import { Category } from "./category.class";
+import { PrivateAPI } from "./private-api.class";
 
-export class Recommendations extends Category{
+export class Recommendations extends PrivateAPI {
     async music() {
-        const token = this.credentials.getToken();
-        if(!token) throw new Error("Unauthorized");
-
         const { data } = await this.axios.get<MusicCategories>(`/recommendations/music/`, {
             headers: {
-              Authorization: token,
+              Authorization: this.token,
             },
         });
         

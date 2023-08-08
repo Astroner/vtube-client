@@ -1,7 +1,7 @@
 import { MusicChannel } from "./responses";
-import { Category } from "./category.class";
+import { API } from "./api.class";
 
-export class Artist extends Category {
+export class Artist extends API {
     async get(id: string) {
         const { data } = await this.axios.get<MusicChannel>(`/channel/music/${id}/`);
     
