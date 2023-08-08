@@ -5,6 +5,10 @@ import { YTPlaylist, YTPlaylistWithID } from "./responses";
 export class Session extends PrivateAPI {
     recommendations = new Recommendations(this.axios, this.token);
 
+    getToken() {
+        return this.token;
+    }
+
     async userInfo() {
         const { data } = await this.axios.get<{ username: string }>("/user/info/", {
             headers: {

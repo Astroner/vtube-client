@@ -7,6 +7,8 @@ import { Search } from "./search";
 import { User } from "./user";
 import { YTPlaylist } from "./responses";
 
+export * from "./responses"
+
 export class VTubeClient {
     channel: Channel;
     artist: Artist;
