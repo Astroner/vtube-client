@@ -2,8 +2,15 @@
   "name": "@dogonis/vtube-client",
   "version": "1.0.2",
   "main": "lib/index.js",
-  "author": "Evgeny Nikiforov",
+  "author": {
+    "email": "zhenyanikforov@gmail.com",
+    "name": "Evgeny Nikiforov"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Astroner/vtube-client"
+  },
   "scripts": {
     "dev": "nodemon ./run/run.ts",
     "build": "tsc --project ./tsconfig.build.json",
