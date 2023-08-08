@@ -11,6 +11,14 @@ yarn add @dogonis/vtube-client
 ```
 
 # Table of content
+ - [Basic Usage](#basic-usage)
+ - [API](#api)
+     - [Channel](#channel)
+     - [Artist](#artist)
+     - [Video](#video)
+     - [Search](#search)
+     - [User](#user)
+     - [Session](#session)
 
 # Basic Usage
 ```ts
