@@ -9,6 +9,8 @@ import { YTPlaylist } from "./responses";
 
 export * from "./responses"
 
+export type { Session } from "./session.class";
+
 export class VTubeClient {
     channel: Channel;
     artist: Artist;
