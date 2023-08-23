@@ -1,6 +1,6 @@
 import { PrivateAPI } from "./private-api.class";
 import { Recommendations } from "./recommendations";
-import { YTPlaylist, YTPlaylistWithID } from "./responses";
+import { ChannelPreview, YTPlaylist, YTPlaylistWithID } from "./responses";
 
 export class Session extends PrivateAPI {
     recommendations = new Recommendations(this.axios, this.token);
@@ -31,6 +31,16 @@ export class Session extends PrivateAPI {
 
     async userPlaylists() {
         const { data } = await this.axios.get<YTPlaylistWithID[]>("/playlist/all", {
+            headers: {
+                Authorization: this.token,
+            },
+        });
+      
+        return data;
+    }
+
+    async userSubscriptions() {
+        const { data } = await this.axios.get<ChannelPreview[]>("/subscriptions", {
             headers: {
                 Authorization: this.token,
             },

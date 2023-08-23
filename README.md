@@ -65,5 +65,7 @@ Basically **VTubeClient** provides a collection of public APIs to fetch data:
  - **userInfo** - get session user info
  - **getDynamicPlaylist** - requests dynamic playlist
  - **userPlaylists** - get session user's playlists
+ - **userSubscriptions** - get session user's subscriptions
  - **recommendations**
      - **music** - get session user's music recommendations
+     - **youtube** - get session user's youtube recommendations
